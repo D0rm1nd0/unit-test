@@ -9,11 +9,26 @@ namespace sort
         {
             throw new NotImplementedException();
         }
-        public static List<int> SelectSort(List<int> arr)
-        {
-            throw new NotImplementedException();
-        }
         public static List<int> InsertSort(List<int> arr)
+        {
+            for (int i = 1; i < arr.Count; i++)
+            {
+                int aux = arr[i];
+                int j = i - 1;
+                while (j >= 0 && arr[j] > aux)
+                {
+                    arr[j+1] = arr[j];
+                    j -= 1;
+                }
+                arr[j + 1] = aux;
+            }
+
+            return arr;
+        }
+
+    
+
+        public static List<int> SelectSort(List<int> arr)
         {
 
             for (int i = 0; i < arr.Count; i++)
